@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View</title>
+
+    <style>
+        body {
+            margin: 4rem;
+            box-sizing: border-box;
+            width:  100%;
+            height: 100%;
+            background: linear-gradient(#00030c, #03035d);;
+        }
+        main {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #signature {
+            width:  60vw;
+            height: 50vh;
+        }
+        svg {
+
+        }
+        svg path {
+            stroke-width: 4px;
+            stroke-opacity: 1;
+            stroke-linecap: round;
+            stroke: #b60000;
+            fill: transparent;
+            filter: drop-shadow(0px 0px 0.3em #b60000);
+
+        }
+
+        #snow {
+            position: fixed;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 2;
+        }
+        #snow .flake {
+            position: relative;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, snow, powderblue);
+            animation-name: fall;
+            animation-timing-function: linear;
+            animation-direction: normal;
+            animation-iteration-count: infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-200vh);
+            }
+            100% {
+                transform: translateY(200vh);
+            }
+        }
+
+
+    </style>
+</head>
+<body onload="signature();">
+
+<main>
+    <div id="signature" onload="signature();">
+
+        <svg id="svgPaint" width="100%"  overflow="visible" >
+        </svg>
+
+        <svg aria-hidden="true" style="position:absolute;width:0;height:0" width="30" height="60" xmlns="http://www.w3.org/2000/svg" overflow="hidden"><defs><symbol id="E_UP" viewBox="0 0 30 60"><path d="M22.478 19.777c3.739.055 15.483-11.158 4.5-16-7.29-3.214-15.657 4.077-16.5 12-1.17 10.994 16.987 13.065 14.5 12.5-2.487-.565-20.027 9.667-22.5 21.5-2.093 10.014 2.768 15.33 13 13.5 12.103-2.164 16-20.5 16-20.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="D_UP" viewBox="0 0 30 60"><path d="M2 22.214S10.541-3.583 22.5 3.108c11.959 6.69 18.5 30.894 7.5 45.5C19 63.214 9.512 61.923 6.5 56.714-.5 44.608 18 39.608 18 39.608" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/><path d="M15.773 14.108c-2 16-2.5 21.5-.5 37.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="C_UP" viewBox="0 0 30 60"><path d="M23.271 22.305s13.518-11.66 3-19c-10.517-7.34-26.551 17.95-24 34 1.404 8.831 3.226 17.778 12 19.5 9.802 1.925 21.5-23.5 21.5-23.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="B_UP" viewBox="0 0 30 60"><path d="M11.331 6s-.5 48-2 42-4.838-11.696-4.5-22c.338-10.304 5.223-18.894 15-18 9.777.894 12.543 20.732-4.5 24-17.043 3.268 17.328-5.454 14.5 14-1.88 12.935-11.66 24.797-22.5 21-6.908-2.42-6.178-11.907-3-18.5 5.987-12.421 20.213-11.476 18-3.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="A_UP" viewBox="0 0 30 60"><path d="M54.461 23.014c-44-7-55 20-52 16.5s13.785-2.193 17 21.5c0 3 9.5-58 17.5-59s2.5 53.5 13 54" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="F_UP" viewBox="0 0 30 60"><path d="M2 23.4c4.214-11.41 11.255-17.84 23-21 24.7-6.65-2.5 72 0 65.5s0-33-7.5-33S33 18.9 47 23.4" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="G_UP" viewBox="0 0 30 60"><path d="M28.217 14.993s4.5-7.5-3-11c-17.056-7.96-32.5 34.5-16.5 35.5 11.714.732 9.887-19.294 21.5-21 18.18-2.67-3.5 56-12 45.5s12.462-38.434 31-28" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="H_UP" viewBox="0 0 30 60"><path d="M25 2.5c-1.588-1.146-4.694 56.64-2.5 59.5 2.194 2.86 3.868-6.431 4-11 .338-11.675-20-18.5-23.5-18.5s19.779-10 50-8.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/><path d="M44.5 4.5c-2.191 19.623-2.805 30.777-2.5 51" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="I_UP" viewBox="0 0 30 60"><path d="M23 3s-2.5 50-2.5 55S20 5.932 6 5.5C-8 5.068 23 1 39 3" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/><path d="M9 61c8.678-2.988 13.604-3.561 22.5-3" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="J_UP" viewBox="0 0 30 60"><path d="M2.5 29.5S1.5 8 18 3s7.5 73-7.5 56.5 27-35.5 24-12" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="K_UP" viewBox="0 0 30 60"><path d="M15.5 2.5c-2.952 11.837-4.247 25.588-6 61.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/><path d="M41.5 6C29.597 21.85-6 47 4 43s30.002 4.065 37.5 25.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="L_UP" viewBox="0 0 30 60"><path d="M2 27c5.5 2.5 30.5-10.5 21-23s-31.5 62.53-5.5 58.015c26-4.515 21-7.5 16-7.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="M_UP" viewBox="0 0 30 60"><path d="M7.5 11c15 5.5 14.5 60.5 0 51.5s7.987-60.025 21-60c13.013.025 3.983 40.9 4 43.5.017 2.6 3.385-33.44 14-26 10.614 7.44-6.44 28.551 3 27.5 9.44-1.051 10.5-11 10.5-11" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="N_UP" viewBox="0 0 30 60"><path d="M2.5 10c7.81 11.064 2.5 50.5 0 51.5S7 1.5 24 3s-3 41 7.5 54.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="O_UP" viewBox="0 0 30 60"><path d="M22 40.5S1.624 30.828 3 20C4.325 9.574 13.5-1.25 25 4.5s2 63-12 57.5-3.5-42-3.5-42" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="P_UP" viewBox="0 0 30 60"><path d="M17.5 13c-2.031 14.387-3.744 73.5-2 48.5 1.744-25-17-37.5-11-48.5S34-3 39 13 12.69 58.874 2 43.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="Q_UP" viewBox="0 0 30 60"><path d="M20 51c.853 6.597 4.035 9.098 15.5 11" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/><path d="M17.5 43s-14.84-9.894-15-19.5C2.29 10.876 12.5 0 27.5 3s7.5 51-8 55S11 22.5 11 22.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="R_UP" viewBox="0 0 30 60"><path d="M12.5 8c-2.782 18.074 0 85.5-2 39S35.5-7 39 12-2.5 45.5 3.5 36.5 23 59 39 56.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="S_UP" viewBox="0 0 30 60"><path d="M28.5 21c4-3 8-21-7.5-18S-1.5 21 5.5 28s34.5 36.5 14 36.5S16 34 34 35" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="T_UP" viewBox="0 0 30 60"><path d="M2.5 10C19.394 2.336 60 3.5 46 5S31.696-.91 25 3.5 23.84 49.77 22 59" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="U_UP" viewBox="0 0 30 60"><path d="M8 6c1.953 22.65-17 65.5 5 58S43.76 13.5 40 4.5C36.24-4.5 22 22 35 64" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="V_UP" viewBox="0 0 30 60"><path d="M2.5 2.5C0 54.5 16 70 16 57.5S31 4 31 4" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="W_UP" viewBox="0 0 30 60"><path d="M11 2s-19.436 67.485 2 59c17.282-6.84 17-56.5 15.5-45S22.622 44.033 34 53.5c15.013 12.492 10-49 10-49" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="X_UP" viewBox="0 0 30 60"><path d="M7 3.5C26 41 19.5 56 32.5 58.5s17.5-22 17.5-22" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/><path d="M2.5 63c17-4 24-39 45.5-60.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="Y_UP" viewBox="0 0 30 60"><path d="M13 2S-7.5 28.5 8 35.5 23 3.5 30.5 5s6 65.5-10 57.5 10-43 19-42.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="Z_UP" viewBox="0 0 30 60"><path d="M10 15.5c1.526-8.057 25-17 31.5-12s-29 64-38 59S38 55 44 62.5" stroke="currentcolor" stroke-width="4" stroke-linecap="round"/></symbol><symbol id="a_LOW" viewBox="0 0 30 60"><path d="M9.5 41.025c-9 4-10.417 14.832-4 16.5 6.352 1.652 8.5-4.5 6.5-15.5s1 27.5 12 4" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="c_LOW" viewBox="0 0 30 60"><path d="M17.447 46.606a1 1 0 1 0-.894 1.788l.894-1.788Zm-6.963-1.427c.153-.84.09-1.619-.203-2.289a3 3 0 0 0-1.405-1.484c-1.188-.605-2.696-.464-3.969.21-1.304.69-2.45 1.974-2.978 3.811-.526 1.834-.42 4.154.637 6.929l1.869-.712c-.943-2.475-.963-4.343-.583-5.665.378-1.319 1.17-2.16 1.99-2.595.853-.451 1.658-.434 2.126-.196.22.112.382.277.481.504.102.233.164.594.067 1.13l1.968.357Zm-7.918 7.177c1.096 2.878 2.89 4.336 5.042 4.575 2.037.227 4.127-.676 5.836-1.859 1.729-1.197 3.234-2.795 4.125-4.233.438-.708.78-1.46.868-2.158a2.272 2.272 0 0 0-.123-1.143 1.776 1.776 0 0 0-.867-.932l-.894 1.788a.23.23 0 0 1-.093-.106c-.012-.028.01.005-.007.14-.036.287-.21.754-.585 1.358-.734 1.187-2.041 2.589-3.562 3.642-1.541 1.067-3.138 1.664-4.477 1.516-1.222-.136-2.491-.928-3.394-3.3l-1.87.712Z" fill="currentcolor"/></symbol><symbol id="d_LOW" viewBox="0 0 30 60"><path d="M12.5 46C2 31.5-3.5 59.5 9 54S6.708 8.697 21.5 13.5C36.4 18.338 8 47 14.5 53c4.24 3.913 10.5-2 13.5-6" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="e_LOW" viewBox="0 0 30 60"><path d="M2 46.5s12-4.5 6-7-8.842 11.351-4 15C9.091 58.337 16.5 44 16.5 44" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="f_LOW" viewBox="0 0 30 60"><path d="M3.5 49s25-24 14-29S1 41.5 7.5 69.5s13.625-6.15 10-10.5c-5-6-24 13.5-12.5 0s19-16.5 19-16.5" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="g_LOW" viewBox="0 0 30 60"><path d="M12.066 43.525c-4-9.5-13 2.5-8.5 9s9-21 10.5-7.5 3 43.5-8.5 41 7.5-34.5 19-41" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="h_LOW" viewBox="0 0 30 60"><path d="M1.5 46.995s28-32.5 15.5-34-8.5 27.273-11.5 42.5c-3 15.228 1.712-20.862 10.5-16.5C24.788 43.357 12.5 53 19.5 54s7.5-4.5 7.5-4.5" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="i_LOW" viewBox="0 0 30 60"><path d="M4.5 34v3M4 40c-6 24.5 6.5 15.5 10.5 5" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="j_LOW" viewBox="0 0 30 60"><path d="M11.5 31.5V35M1.5 53s10-28.5 11-3 0 40-9.5 36 19-41 19-41" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="k_LOW" viewBox="0 0 30 60"><path d="M1 49s21.5-35.5 12-38.5-8.5 54.5-9.5 44S8.5 33 13 40s-13.5 7.5-9.5 7.5 7 15 18-2" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="l_LOW" viewBox="0 0 30 60"><path d="M1.5 46.5S26 10.5 15 5.5-.5 40.5 6 52s14.5-8 14.5-8" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="m_LOW" viewBox="0 0 30 60"><path d="M1 44.5s5-10 7-5.5-1.5 5.5-1.5 16-1.5-16 7-16 3 7 3 12.5S16.5 38 26 38c6.081 0-4 15 1.5 15.5s10-9 10-9" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="n_LOW" viewBox="0 0 30 60"><path d="M1.5 46.5S7 34.5 9 39s-1.5 5.5-1.5 16-1.5-16 7-16 4 8 4 13.5 7 2.5 8.5-2.5" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="o_LOW" viewBox="0 0 30 60"><path d="M1 47s14-5.5 9-5.5S1 55 9 55s7.5-13.5 2.5-13.5 3.551 4.5 8 2.5" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="p_LOW" viewBox="0 0 30 60"><path d="M1.5 47.5s4-17 5-8.5-2 22.5-2 33-1-35 12-33-16 21.06-9 16c7-5.06 8 0 13.5-6.5" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="q_LOW" viewBox="0 0 30 60"><path d="M14 42C5.5 36.5-2.5 50 4 52.5s11.162-18.023 12.5-13c1.338 5.023-11.682 45.626-3.5 46 8.183.374 2.318-36.5-6.5-21s3-13.5 19-21" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="r_LOW" viewBox="0 0 30 60"><path d="M4 39.5V55c0 5 .752-17.752 7-15.5 3.128 1.128 2.204 6.064 5.5 6.5 2.266.3 5.5-2 5.5-2" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="s_LOW" viewBox="0 0 30 60"><path d="M15 41.5c1.5-16.5-8.5-9-11.5-2S17 62 8 60s9.5-16.5 14-16" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="u_LOW" viewBox="0 0 30 60"><path d="M3.5 41.5s-2.026 11.625 3 13c5.561 1.522 8.5-20.5 7-13s-4.769 11.258 0 13c4.54 1.66 8-2.5 5.5-4" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="t_LOW" viewBox="0 0 30 60"><path d="M1 25.5c9.504-2.76 14.614-2.435 23.5 0" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/><path d="M13.5 18.5S3.5 77 24.5 47" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="v_LOW" viewBox="0 0 30 60"><path d="M8 40c.5 9.5 5.5 15 7.5 14.5S19 47.5 19 40s-3.5 23.5 12 6" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="w_LOW" viewBox="0 0 30 60"><path d="M6 38.5S.272 52.049 6 55c6.444 3.32 10.5-22.5 8.5-16.5S11.424 54.623 18 55c6.668.382 13.231-22.5 4.5-16.5s11 6 11 6" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="x_LOW" viewBox="0 0 30 60"><path d="M8 40c2.694 18.593 12 19 18.5 6" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/><path d="M4 56c7.5-4 7-11 15-16.5" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="y_LOW" viewBox="0 0 30 60"><path d="M5.5 40.5S-1 57 10 55.5s2.5-22 5-13.5 6 45-8 45 .479-31.5 17.5-41" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="z_LOW" viewBox="0 0 30 60"><path d="M2 45.5c1.5-9 11.5-7.5 8.5 2.5S.5 52.5 8 55s9.5 28-2 31.5 7-38.5 14.5-41" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/></symbol><symbol id="b_LOW" viewBox="0 0 30 60"><path d="M2.5 46.5c17.5-19 15.5-32 10-33S7.5 26 5 48.5s-2.5-12 10.5-8S4.807 55.631 6 51.5c1.193-4.131 15.5-6 15.5-6" stroke="currentcolor"/></symbol></defs></svg>
+
+    </div>
+    <div id="snow">
+    </div>
+</main>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const string = urlParams.get("string") ?urlParams.get("string"): "bbYour Text";
+
+    const linear = x => x;
+
+    const animate = (tweening, millisecs, callback, onDone) => {
+        let start = null;
+        function paint(timestamp) {
+            if (!start) start = timestamp;
+            const progress = timestamp - start;
+            const fraction = progress / millisecs;
+            const value    = tweening(fraction);
+            callback(value);
+            if (progress < millisecs) {
+                window.requestAnimationFrame(paint);
+            } else {
+                callback(1);
+                if (onDone) onDone();
+            }
+        }
+        callback(0);
+        window.requestAnimationFrame(paint);
+    };
+
+    const symbols = Array.from(document.querySelectorAll("#alphabetSvg, defs symbol"));
+    const alphabet = symbols.reduce((obj, c) => {
+        obj[c.id] = c.children;
+        return obj;
+    }, {});
+
+    console.log(alphabet);
+
+    const getKeysFromString = str => {
+        return [...str].map(letter => {
+            if(letter === ' '){
+                return "space";
+            }
+            if(letter.toUpperCase() === letter){
+                return letter + "_UP";
+            }else {
+                return letter + "_LOW";
+            }
+        });
+    }
+    const keyed = getKeysFromString(string);
+    const svgPaint = document.getElementById("svgPaint");
+
+    const pathInfo = [];
+    let x = 0;
+    keyed.forEach((key) => {
+
+        if(key === "space"){
+            x += 30;
+            return;
+        }
+        console.log(key);
+        const paths = Array.from(alphabet[key]);
+        let pathWidth = 0;
+        paths.forEach(uncloned => {
+            path = uncloned.cloneNode(true);
+            path.style['transform'] = 'translate('+x+'px, 0)';
+
+            path.total = path.getTotalLength();
+            path.style['stroke-dasharray']  = path.total;
+            path.style['stroke-dashoffset'] = path.total;
+
+            if(key.endsWith("_LOW")){
+                path.style['stroke-width'] = "2px";
+            }
+            pathInfo.push(path);
+            svgPaint.appendChild(path)
+            const bbox = path.getBBox();
+            if(bbox.width > pathWidth){
+                pathWidth = bbox.width;
+            }
+        });
+
+        x+= pathWidth;
+    });
+    svgPaint.setAttribute("viewBox", `0 0 ${x} 60`);
+    const animateStroke = i => fraction => {
+        const total = pathInfo[i].total;
+        pathInfo[i].style['stroke-dashoffset'] = total * (1-fraction);
+    };
+
+    const velocity = 5;
+    const signature = () => {
+
+        const fn = pathInfo.reverse().reduce((fn, path, i) => {
+            return () => animate(linear, path.total * velocity, animateStroke(i), fn);
+        }, _ => {});
+        fn();
+        start();
+    }
+
+    const start = () => document.querySelectorAll(".start").forEach(span => span.classList.remove("start"));
+
+
+    const makeFlake = _ => ({left: Math.random() * 100, top: (Math.random()) * 100} );
+    const fast   = Array.from( {length:  4}, makeFlake);
+    const middle = Array.from( {length: 10}, makeFlake);
+    const slow   = Array.from( {length: 40}, makeFlake);
+
+    const register = (flakes, size, animationSeconds) => {
+        flakes.forEach( flakeModel => {
+            const flake = document.createElement("DIV");
+            flake.classList.add("flake");
+            flake.style.left   = flakeModel.left + "%";
+            flake.style.top    = flakeModel.top  + "%";
+            flake.style.width  = size;
+            flake.style.height = size;
+            flake.style['animation-duration'] = (Math.random() + 0.5) * animationSeconds + "s";
+            snow.appendChild(flake);
+        });
+    };
+    register(fast,   "25px", 5);
+    register(middle, "18px", 8);
+    register(slow,   "12px", 10);
+
+</script>
+
+</body>
+</html>
